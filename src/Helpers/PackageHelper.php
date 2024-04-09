@@ -1,6 +1,6 @@
 <?php
 
-namespace Untek\Core\Code\Helpers;
+namespace Untek\Component\Package\Helpers;
 
 use Untek\Core\Collection\Interfaces\Enumerable;
 use Untek\Core\Collection\Libs\Collection;
@@ -44,7 +44,7 @@ class PackageHelper
 
     public static function getInstalled(): array
     {
-        $store = new StoreFile(__DIR__ . '/../../../../../vendor/composer/installed.json');
+        $store = new StoreFile(__DIR__ . '/../../../../composer/installed.json');
         return $installed = $store->load();
     }
 
@@ -56,7 +56,7 @@ class PackageHelper
 
     public static function getPsr4Dictonary()
     {
-        $psr4 = include(__DIR__ . '/../../../../../../composer/autoload_psr4.php');
+        $psr4 = include(__DIR__ . '/../../../../composer/autoload_psr4.php');
         return $psr4;
     }
 
